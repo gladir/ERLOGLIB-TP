@@ -3,7 +3,7 @@ Bibliothèque en Turbo Pascal pour la gestion des erreurs (errorlog).
 
 <h3>Liste des fonctions</h3>
 
-Voici la liste des fonctions reconnus dans l'unité ERLOGLIB :
+Voici la liste des fonctions reconnus dans l'unité ERRLOGTP :
 
 <table>
 	<tr>
