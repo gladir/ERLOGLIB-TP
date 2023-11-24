@@ -1,6 +1,7 @@
 # ERLOGLIB-TP
 Bibliothèque en Turbo Pascal pour la gestion des erreurs (errorlog).
 
+<h3>Liste des fonctions</h3>
 
 Voici la liste des fonctions reconnus dans l'unité ERLOGLIB :
 
@@ -34,3 +35,8 @@ Voici la liste des fonctions reconnus dans l'unité ERLOGLIB :
     <td>Cette fonction permet de fixer le nom du fichier des erreurs du journal de bord (error log).</td>
   </tr>
 </table>
+
+<h3>Remarque</h3>
+<ul>
+	<li>Par défaut, sous Linux, il écrit dans le répertoire «/var/log/» les fichiers d'accès et d'erreur.</li>
+</ul>
