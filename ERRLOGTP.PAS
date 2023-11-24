@@ -53,13 +53,16 @@ Var
  Year,Month,Day,DOW,Hour,Min,Sec,CentSec:Word;
 Begin
  {$I-}Assign(FileAccess,FileNameAccess);
- Reset(FileAccess);{$I+}
- If IOResult<>0 Then Begin
+ Append(FileAccess);{$I+}
+ If IoResult<>0 Then Begin
+  {$I-}Rewrite(FileAccess);{$I+}
+ End;
+ If IOResult=0 Then Begin
   GetDate(Year,Month,Day,DOW);
   GetTime(Hour,Min,Sec,CentSec);
   Write(FileAccess,Year:4,'-',PadZeroLeft(Month,2),'-',
-        PadZeroLeft(Day,2),' ',Hour:2,':',PadZeroLeft(Min,2),
-        '.',CentSec,' ');
+        PadZeroLeft(Day,2),' ',Hour:2,':',PadZeroLeft(Min,2),':',
+        PadZeroLeft(Sec,2),'.',CentSec,' ');
   WriteLn(FileAccess,Msg);
   Close(FileAccess);
  End
@@ -75,20 +78,23 @@ Var
  FileError:Text;
  Year,Month,Day,DOW,Hour,Min,Sec,CentSec:Word;
 Begin
- {$I-}Assign(FileError,FileNameAccess);
- Reset(FileError);{$I+}
- If IOResult<>0 Then Begin
+ {$I-}Assign(FileError,FileNameError);
+ Append(FileError);{$I+}
+ If IoResult<>0 Then Begin
+  {$I-}Rewrite(FileError);{$I+}
+ End;
+ If IOResult=0 Then Begin
   GetDate(Year,Month,Day,DOW);
   GetTime(Hour,Min,Sec,CentSec);
   Write(FileError,Year:4,'-',PadZeroLeft(Month,2),'-',
-        PadZeroLeft(Day,2),' ',Hour:2,':',PadZeroLeft(Min,2),
-        '.',CentSec,' ');
+        PadZeroLeft(Day,2),' ',Hour:2,':',PadZeroLeft(Min,2),':',
+        PadZeroLeft(Sec,2),'.',CentSec,' ');
   WriteLn(FileError,Msg);
   Close(FileError);
  End
   Else
  Begin
-  WriteLn('Impossible d''‚crire le LOG d''erreur');
+  WriteLn('Impossible d''‚crire le LOG d''erreur : ',FileNameError);
   Halt;
  End;
 End;
