@@ -1,5 +1,5 @@
 # ERLOGLIB-TP
-Bibliothèque en Turbo Pascal pour la gestion des erreurs (errorlog).
+Bibliothèque en Turbo Pascal (ou Free Pascal) pour la gestion des erreurs (errorlog).
 
 <h3>Liste des fonctions</h3>
 
